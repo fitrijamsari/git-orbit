@@ -271,8 +271,8 @@
 .lab-console .workspace-pane-host{flex:0 1 280px;min-height:160px}
 .lab-console #workspace-graph{flex:1;min-height:200px;height:auto}
 #workspace-graph .graph-scroll svg{width:100%;height:100%;max-height:320px;min-height:0}
-.lab-grid[data-pane=quiz] .workspace-pane-host{flex:1;min-height:0}
-.lab-grid[data-pane=quiz] #workspace-graph{flex:0 0 190px;min-height:0}
+.lab-grid[data-pane=quiz] .workspace-pane-host{flex:0 1 380px;min-height:160px}
+.lab-grid[data-pane=quiz] #workspace-graph{flex:1;min-height:200px}
 .workspace-view-tabs .lesson-overview-button{font-size:11px;color:#9fbcb4}
 #workspace-file .recipe-code-panes{align-content:start}
 /* A short, readable briefing before each practice. */
@@ -312,7 +312,7 @@
 .preview-start p{font-size:12px;line-height:1.5;color:#839dad;margin:6px 0 0}
 .preview-start .primary-button{width:auto;min-width:170px;padding:12px 18px;justify-content:space-between}
 @media(max-width:900px){.lab-console .workspace-pane-host{flex:0 1 290px;min-height:130px}.lab-console #workspace-graph{min-height:180px}.lab-grid[data-pane=guide] .workspace-pane-host{flex:1}.lab-grid[data-pane=guide] #workspace-graph{flex:0 0 210px}.lesson-preview-grid{grid-template-columns:1fr}.preview-setup{border-left:0;border-top:1px solid #2a403d}.preview-goals,.preview-setup{padding:20px}.preview-goals ol{gap:11px}.preview-setup p{max-width:none}.preview-save-count strong{font-size:32px}.lesson-preview-active main{padding:20px}}
-@media(max-width:650px){.lab-console .workspace-pane-host{flex:1;min-height:100px}.lab-console #workspace-graph{flex:0 0 220px;min-height:0}.lab-grid[data-pane=quiz] #workspace-graph{flex-basis:170px}.lesson-preview-heading h2{font-size:29px}.lesson-preview-heading>p{font-size:13px;margin-bottom:16px}.preview-goals li>p{font-size:13px}.preview-outcome{font-size:12px}.preview-setup p{font-size:12px}.preview-setup small{font-size:10px}.preview-goals,.preview-setup{padding:16px}.preview-start{align-items:stretch;flex-direction:column;gap:12px}.preview-start .primary-button{width:100%}.preview-terms{gap:6px}.lesson-preview-active .topbar{display:none}.workspace-view-tabs .graph-head-actions .lesson-overview-button{font-size:10px;padding:4px}.preview-radar{width:140px;height:140px}}
+@media(max-width:650px){.lab-console .workspace-pane-host{flex:1;min-height:100px}.lab-console #workspace-graph{flex:0 0 220px;min-height:0}.lab-grid[data-pane=quiz] #workspace-graph{flex:0 0 220px;min-height:0}.lesson-preview-heading h2{font-size:29px}.lesson-preview-heading>p{font-size:13px;margin-bottom:16px}.preview-goals li>p{font-size:13px}.preview-outcome{font-size:12px}.preview-setup p{font-size:12px}.preview-setup small{font-size:10px}.preview-goals,.preview-setup{padding:16px}.preview-start{align-items:stretch;flex-direction:column;gap:12px}.preview-start .primary-button{width:100%}.preview-terms{gap:6px}.lesson-preview-active .topbar{display:none}.workspace-view-tabs .graph-head-actions .lesson-overview-button{font-size:10px;padding:4px}.preview-radar{width:140px;height:140px}}
 @media(max-height:740px) and (max-width:650px){.lab-console #workspace-graph{flex-basis:185px}}
 @media(prefers-reduced-motion:reduce){.preview-radar i{animation:none}}.motion-paused .preview-radar i{animation:none}
 
@@ -343,3 +343,32 @@
 }
 
 @media(max-width:650px){.lesson-preview-grid{grid-auto-rows:max-content}}
+
+/* Quiz content stays compact; spare room belongs to the graph. */
+#workspace-quiz .lesson-quiz{padding-top:12px;padding-bottom:8px}
+#workspace-quiz .recap-heading h2{font-size:18px}
+#workspace-quiz .recap-progress{margin:10px 0}
+#workspace-quiz .recap-question{margin:8px 0 10px;font-size:15px}
+#workspace-quiz .recap-choices button{padding:7px 10px}
+#workspace-quiz .recap-feedback{margin-top:8px;padding:7px 10px}
+#workspace-quiz .recap-footer{margin-top:6px;padding-top:7px}
+/* Commit text uses the diagram's natural size, regardless of panel size. */
+#workspace-graph .graph-scroll{justify-content:center}
+#workspace-graph .graph-scroll svg{flex:none;max-height:100%;max-width:none;margin:auto;min-height:0}
+@media(max-width:650px){.lab-grid[data-pane=quiz] .workspace-pane-host{flex:1;min-height:0}#workspace-graph .graph-scroll{justify-content:flex-start}#workspace-quiz .recap-heading h2{font-size:17px}.lab-grid[data-pane=quiz] #workspace-graph{flex-basis:220px}}
+@media(max-width:650px) and (max-height:740px){.lab-grid[data-pane=quiz] #workspace-graph{flex-basis:185px}}
+
+#workspace-quiz .recap-heading h2{font-size:16px;margin:4px 0}
+#workspace-quiz .recap-heading p{display:none}
+
+#workspace-quiz .recap-letter{width:24px;height:24px;font-size:11px}
+#workspace-quiz .recap-feedback{min-height:0;margin-bottom:0}
+
+@media(max-width:650px){
+#workspace-quiz .recap-heading{display:flex;flex-direction:row;align-items:center;gap:8px}
+#workspace-quiz .recap-heading h2{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+#workspace-quiz .recap-badge{margin-top:0;font-size:9px;padding:4px 6px}
+#workspace-quiz .recap-footer{flex-direction:row;align-items:center;gap:8px}
+#workspace-quiz .recap-footer .primary-button{width:auto;min-width:0;max-width:180px;font-size:11px}
+#workspace-quiz .recap-skip,#workspace-quiz .recap-replay{font-size:11px;padding:6px 0}
+}

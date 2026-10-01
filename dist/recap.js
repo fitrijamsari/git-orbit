@@ -52,7 +52,7 @@ function renderLessonQuiz(){
 }
 document.addEventListener('click',event=>{
  const button=event.target.closest('button');if(!button||step<lessons[lesson].steps.length)return;
- if(button.dataset.recapAnswer!==undefined&&recapState.choice===null){const choice=Number(button.dataset.recapAnswer),q=lessonRecaps[lesson][recapState.question];if(!Number.isInteger(choice)||choice<0||choice>=q.answers.length)return;recapState.choice=choice;recapState.answers[recapState.question]=choice===q.correct;renderLessonQuiz();$('#recap-feedback').focus?.({preventScroll:true});}
+ if(button.dataset.recapAnswer!==undefined&&recapState.choice===null){const choice=Number(button.dataset.recapAnswer),q=lessonRecaps[lesson][recapState.question];if(!Number.isInteger(choice)||choice<0||choice>=q.answers.length)return;recapState.choice=choice;recapState.answers[recapState.question]=choice===q.correct;renderLessonQuiz();const feedback=$('#recap-feedback'),content=$('#lesson-quiz .recap-content');feedback.focus?.({preventScroll:true});requestAnimationFrame(()=>{const overflow=feedback.getBoundingClientRect().bottom-content.getBoundingClientRect().bottom;if(overflow>0)content.scrollTop+=overflow+8;});}
  if(button.hasAttribute('data-recap-next')&&recapState.choice!==null){if(recapState.question===lessonRecaps[lesson].length-1)recapState.finished=true;else{recapState.question++;recapState.choice=null;}renderLessonQuiz();focusLessonQuiz();}
  if(button.hasAttribute('data-recap-replay')){resetLessonQuiz();renderLessonQuiz();focusLessonQuiz();}
  if(button.hasAttribute('data-recap-skip')){recapState.finished=true;recapState.skipped=true;renderLessonQuiz();focusLessonQuiz();}
