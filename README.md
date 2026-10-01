@@ -18,7 +18,9 @@ Open http://127.0.0.1:4173. No build step or application dependencies are requir
 
 The deployable website is the `dist` folder. `wrangler.jsonc` configures a Pages project named `git-orbit-lab`.
 
-For automatic updates, connect this repository in Cloudflare's **Workers & Pages → Create application → Pages → Import an existing Git repository** flow. Use these settings:
+The Pages project is connected to [fitrijamsari/git-orbit](https://github.com/fitrijamsari/git-orbit). The production site is [git-orbit-lab.pages.dev](https://git-orbit-lab.pages.dev). Manage it in the [Cloudflare Pages dashboard](https://dash.cloudflare.com/2d76be11b31c484b215bd57a0a6968b6/pages/view/git-orbit-lab).
+
+The project uses these settings:
 
 | Setting | Value |
 | --- | --- |
@@ -28,7 +30,11 @@ For automatic updates, connect this repository in Cloudflare's **Workers & Pages
 | Build output directory | `dist` |
 | Root directory | Repository root |
 
-Push changes to `main` to update the production site. Cloudflare also creates preview deployments for other branches. Manage deployments and custom domains from the project's Pages dashboard.
+Push changes to `main` to update the production site. Cloudflare also creates preview deployments for other branches. Manage deployments and custom domains from the project's Pages dashboard. In this checkout, `github` is the GitHub remote and `origin` retains the previous Sites source location:
+
+```sh
+git push github main
+```
 
 For local development or a manual deployment to the configured project:
 
