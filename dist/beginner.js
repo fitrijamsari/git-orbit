@@ -180,7 +180,7 @@ function renderBeginnerGuide(){
  const finished=step>=lessons[lesson].steps.length;
  const alreadyConnected=lesson===0&&step===4&&state.remoteConfigured;
  if(alreadyConnected)document.querySelector('#next-action').innerHTML='Connection ready · continue <span>⌘</span>';
- document.querySelector('#step-explanation').innerHTML=`<span class="section-kicker">${finished?'YOU DID IT':'BEFORE YOU CLICK'}</span><p>${finished?'You can replay this lesson or continue. Try explaining how you saved and shared the recipe in your own words.':alreadyConnected?'You already connected origin using a quick command. That address is ready. Continue to the sharing step; your saved recipe has not been uploaded yet.':guide.before[step]}</p>${finished?'':`<small>${escapeHTML(guide.commandNotes[step])}</small>`}`;
+ document.querySelector('#step-explanation').innerHTML=`<span class="section-kicker">${finished?'YOU DID IT':'BEFORE YOU CLICK'}</span><p>${finished?'You finished the practice. Answer the two recap questions below to check your understanding. You can replay them or skip the quiz.':alreadyConnected?'You already connected origin using a quick command. That address is ready. Continue to the sharing step; your saved recipe has not been uploaded yet.':guide.before[step]}</p>${finished?'':`<small>${escapeHTML(guide.commandNotes[step])}</small>`}`;
  document.querySelector('#lesson-feedback').hidden=step===0;
  document.querySelector('#lesson-feedback').innerHTML=step===0?'':`<span>✓</span><div><strong>What just happened?</strong><p>${guide.after[Math.min(step-1,guide.after.length-1)]}</p></div>`;
 }
