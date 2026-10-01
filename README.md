@@ -30,7 +30,9 @@ The project uses these settings:
 | Build output directory | `dist` |
 | Root directory | Repository root |
 
-Push changes to `main` to update the production site. Cloudflare also creates preview deployments for other branches. Manage deployments and custom domains from the project's Pages dashboard. In this checkout, `github` is the GitHub remote and `origin` retains the previous Sites source location:
+The first production deployment is live and all five assets match `dist`. Automatic production and branch preview builds are enabled in the Pages configuration, but a test push did not trigger a build. The GitHub app's repository access still needs to be checked before relying on automatic updates. In [GitHub application settings](https://github.com/settings/installations), configure Cloudflare Workers and Pages and ensure this repository is included. Until automatic updates are verified, use `npm run deploy` to publish changes manually.
+
+Manage deployments and custom domains from the project's Pages dashboard. In this checkout, `github` is the GitHub remote and `origin` retains the previous Sites source location:
 
 ```sh
 git push github main
