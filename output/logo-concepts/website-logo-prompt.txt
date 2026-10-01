@@ -1,0 +1,4 @@
+Built-in image_gen tool; derived from the selected 01-orbital-commits.png concept.
+Transparent extraction followed by edge cleanup. Website files are resized exports of orbital-commits-transparent.png.
+
+Use case: precise-object-edit. Edit the supplied transparent orbital commits logo. Keep its geometry, orbit orientation, all six node positions and sizes, fork, mint color, lavender color, and transparent background. Change ONLY the edge cleanliness: eliminate every isolated speckle, dot, stray pixel, texture, ragged edge, and background residue around and within the symbol; smooth clean antialiased edges. Solid flat vector-like fills. Everything outside the connected symbol must have alpha zero, including all empty space inside the orbit. Center emblem within square canvas with balanced 6% transparent margin. No text, shadows, backdrop, texture, gradients, or added elements. Website brand asset production finish.

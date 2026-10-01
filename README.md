@@ -18,6 +18,12 @@ The workflow diagrams build commit history one decision at a time. Branch pointe
 
 Gitflow is presented as an optional model for planned, versioned releases, with its creator’s guidance to consider simpler workflows for continuous delivery. Each module links to its Git or GitHub documentation, or the original Gitflow model and reflection. Graphs scroll horizontally without widening the page, keyboard controls are supported, and graph animation respects reduced motion.
 
+## Branding
+
+The selected orbital commits logo is shared by the sidebar, footer, lesson overview, and About dialog. Deployable assets live in `dist/assets/brand`, with a multi-size `dist/favicon.ico`, PNG favicons, an Apple touch icon, home-screen icons referenced by `dist/site.webmanifest`, and the selected concept as the social preview. Transparent source artwork and generation prompts are retained in `output/logo-concepts`.
+
+Verified the logo on desktop and 390 × 844 mobile layouts, including lesson practice, with no page-width overflow or browser errors. All linked local assets, favicon sizes, image transparency, and manifest icon dimensions were checked. JavaScript checks and the existing six tests pass.
+
 ## Run locally
 
 From this directory:

@@ -474,3 +474,13 @@ footer{flex-wrap:wrap;gap:8px 16px}footer .footer-credit{color:var(--mint);text-
 .page>main{flex:1;width:100%;margin:0 auto}
 .page>footer,.page>.topbar{flex-shrink:0}
 @media(max-width:650px){.app-shell{display:flex;flex-direction:column;min-height:100dvh}.sidebar{flex:none}}
+
+/* Orbital commits brand assets shared across every learning view. */
+.brand .brand-icon{display:block;width:44px;height:44px;flex:none;object-fit:contain;background:none;border:0;border-radius:0}
+.footer-brand{display:flex;align-items:center;gap:6px}
+.footer-brand img{display:block;flex:none;object-fit:contain}
+.preview-radar>img{display:block;width:120px;height:120px;object-fit:contain}
+.about-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.about-brand img{display:block;flex:none;object-fit:contain}
+.about-brand .detail-label{margin:0}
+@media(max-width:650px){.brand .brand-icon{width:36px;height:36px}.lab-active .brand .brand-icon,.lesson-preview-active .brand .brand-icon{width:30px;height:30px}.footer-brand{flex-wrap:wrap;gap:4px}.footer-brand img{width:20px;height:20px}}
