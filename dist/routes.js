@@ -1,6 +1,6 @@
 // Shared by the browser, static-page generator, and routing checks.
 (function(root){
-  const origin='https://git-orbit-lab.pages.dev';
+  const origin='https://git-orbit.algomatrix.my';
   const routes=[
     {path:'/',view:'introduction',title:'Learn Git & GitHub Interactively | Git Orbit',description:'Learn Git and GitHub with free interactive lessons. Practice commits, branches, pull requests, and merge conflicts in a safe browser simulator.'},
     {path:'/lessons/start-a-repository/',view:'lesson-intro',lesson:0,title:'Git Basics: Init, Stage & Commit | Git Orbit',description:'Create your first Git repository. Learn git init, git add, and git commit with a guided recipe example, a visual history, and a short recap.'},

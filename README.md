@@ -48,7 +48,7 @@ Open http://127.0.0.1:4173. Run `npm run build` after changing content or the pa
 
 The deployable website is the `dist` folder. `wrangler.jsonc` configures a Pages project named `git-orbit-lab`.
 
-The Pages project is connected to [fitrijamsari/git-orbit](https://github.com/fitrijamsari/git-orbit). The production site is [git-orbit-lab.pages.dev](https://git-orbit-lab.pages.dev). Manage it in the [Cloudflare Pages dashboard](https://dash.cloudflare.com/2d76be11b31c484b215bd57a0a6968b6/pages/view/git-orbit-lab).
+The Pages project is connected to [fitrijamsari/git-orbit](https://github.com/fitrijamsari/git-orbit). The production site is [git-orbit.algomatrix.my](https://git-orbit.algomatrix.my). Manage it in the [Cloudflare Pages dashboard](https://dash.cloudflare.com/2d76be11b31c484b215bd57a0a6968b6/pages/view/git-orbit-lab).
 
 The project uses these settings:
 

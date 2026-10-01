@@ -55,4 +55,5 @@ for(const route of routes){
  const file=path.join(root,'dist',route.path,'index.html');fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,html);
 }
 fs.writeFileSync(path.join(root,'dist/sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${routes.map(route=>`  <url><loc>${origin+route.path}</loc></url>`).join('\n')}\n</urlset>\n`);
+fs.writeFileSync(path.join(root,'dist/robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
 console.log(`Generated ${routes.length} crawlable pages and sitemap.xml.`);

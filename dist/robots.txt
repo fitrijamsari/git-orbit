@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://git-orbit-lab.pages.dev/sitemap.xml
+Sitemap: https://git-orbit.algomatrix.my/sitemap.xml
