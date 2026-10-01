@@ -14,6 +14,34 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory dist
 
 Open http://127.0.0.1:4173. No build step or application dependencies are required. Google Fonts is optional; system fonts are used when unavailable.
 
+## Cloudflare Pages
+
+The deployable website is the `dist` folder. `wrangler.jsonc` configures a Pages project named `git-orbit-lab`.
+
+For automatic updates, connect this repository in Cloudflare's **Workers & Pages → Create application → Pages → Import an existing Git repository** flow. Use these settings:
+
+| Setting | Value |
+| --- | --- |
+| Production branch | `main` |
+| Framework preset | None |
+| Build command | Leave blank |
+| Build output directory | `dist` |
+| Root directory | Repository root |
+
+Push changes to `main` to update the production site. Cloudflare also creates preview deployments for other branches. Manage deployments and custom domains from the project's Pages dashboard.
+
+For local development or a manual deployment to the configured project:
+
+```sh
+npm ci
+npm run check
+npm run dev
+# Deploy after authenticating with npx wrangler login:
+npm run deploy
+```
+
+Credentials stay in Wrangler's local login storage and must never be committed. The old `.openai/hosting.json` is retained as metadata for the previous Sites host; Cloudflare serves only `dist`.
+
 ## Learning model
 
 The terminal is a teaching simulation; it does not execute shell commands, access real repositories, or connect to GitHub. Commit IDs are illustrative. Progress is stored in local browser storage. Reduced motion is supported.
