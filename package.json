@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "check": "node --check dist/app.js && node --check dist/beginner.js && node --check dist/recap.js",
+    "check": "node --check dist/app.js && node --check dist/beginner.js && node --check dist/recap.js && node --check dist/beyond.js",
+    "test": "node --test tests/*.test.cjs",
     "dev": "wrangler pages dev dist",
     "deploy": "wrangler pages deploy dist --branch main"
   },

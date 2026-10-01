@@ -4,6 +4,20 @@ An interactive, browser-only Git and GitHub learning lab with two separate learn
 
 The introduction uses a solo pancake recipe example and a solo-to-Git summary table; team concepts have a separate expandable table. Each lesson opens with a dedicated overview of three learning goals, its prepared starting history, useful terms, and the outcome before the Start practice button reveals the lab. Overview can be reopened without resetting progress. Each lesson explains its replayable starting history, includes plain-language guidance before and after every action, and ends with a two-question recap with feedback, score, replay, and optional skip. Includes an animated chronological commit timeline with fixed main and feature lanes, visible split/merge connections, separate local/GitHub pointers, commit messages and authors, and explanations of fast-forward, fetch, push, and pull. Longer histories scroll horizontally without shrinking the diagram on mobile. The File and Terminal views share a compact upper workspace, capped at 280 pixels on desktop. The animated commit graph stays underneath and fills the remaining space instead of expanding the editor. The current command, Run button, and latest result remain accessible between them. The lesson guide offers Current step, All steps, and Notes views; smaller screens include it in a Lesson tab. Quizzes open in the same workspace with fixed navigation controls. The learning layout fits the viewport without page scrolling, while long histories and explanations use bounded internal scrolling. Editor and GitHub actions and conflict resolution choices are explicitly labeled. Typed commands, inspection shortcuts, and expandable lesson quick commands remain available. Also includes searchable command references, and practice questions. A file workbench displays the actual pancakes.txt contents beside the current saved snapshot, with animated green additions and red replacements. Working, staging, and GitHub tabs use distinct simulator snapshots. Edit, stage, commit, and push have separate lesson actions; commit inspection shows the saved file contents.
 
+## Habits & workflows
+
+The optional **Habits & workflows** sidebar section follows the beginner paths, with a link from path completion. It contains 33 decisions across five replayable modules:
+
+- **Good Git habits:** inspect diffs, separate unrelated changes, write useful messages, name branches, and keep untracked private files out of commits.
+- **Everyday problems:** preserve edits on the wrong branch, unstage a file, stash unfinished tracked work, integrate a rejected push, and revert a shared mistake.
+- **GitHub Flow:** practice review feedback, a failed required check, follow-up commits, merge approval, and branch cleanup.
+- **Gitflow:** follow feature integration, parallel development during release preparation, release tagging, and hotfix integration back into future work.
+- **Tags & releases:** create and publish an annotated tag, describe a GitHub release, retain a tag as main advances, and distinguish releases from deployment.
+
+The workflow diagrams build commit history one decision at a time. Branch pointers, release tags, and inspectable parent relationships show what each choice changes. All actions are guided simulations, separate from the terminal lab; they do not run commands or contact GitHub. Progress uses the independent `git-orbit-beyond-v1` browser storage key and supports resuming solved decisions after reload, completion, and replay. The six beginner lessons keep their original progress and numbering.
+
+Gitflow is presented as an optional model for planned, versioned releases, with its creator’s guidance to consider simpler workflows for continuous delivery. Each module links to its Git or GitHub documentation, or the original Gitflow model and reflection. Graphs scroll horizontally without widening the page, keyboard controls are supported, and graph animation respects reduced motion.
+
 ## Run locally
 
 From this directory:
@@ -30,12 +44,13 @@ The project uses these settings:
 | Build output directory | `dist` |
 | Root directory | Repository root |
 
-The production site is live and all five assets match `dist`. The Cloudflare Workers and Pages GitHub app now has saved access to this repository. Pages is configured to deploy pushes to `main` to production and other branches to preview URLs. You can also use `npm run deploy` to publish changes manually.
+The production site is live. Local changes are published by the configured Git integration or a manual deployment. The Cloudflare Workers and Pages GitHub app now has saved access to this repository. Pages is configured to deploy pushes to `main` to production and other branches to preview URLs. You can also use `npm run deploy` to publish changes manually.
 
 Manage deployments and custom domains from the project's Pages dashboard. In this checkout, `github` is the GitHub remote and `origin` retains the previous Sites source location:
 
 ```sh
 npm run check
+npm test
 git push github main
 ```
 
@@ -66,3 +81,5 @@ Verified all six practices reach the Quiz view with the graph remaining visible.
 Verified all six lesson overviews, explicit Start practice navigation, prepared save counts, practice completion, and continuation to the next lesson overview. Confirmed 1280 × 720 and 1440 × 984 practice fit, larger graph allocation (441 pixels at 984 height), and mobile intro/practice controls within 390 × 844. No browser runtime errors.
 
 Quiz sizing is capped at 380 pixels on desktop, with remaining space reserved for the graph. Graph labels use the diagram’s natural dimensions rather than stretching to fill large panels. Verified quiz/graph allocation at 1654 × 977 (380 / 426 pixels), matching graph text across Terminal and Quiz, short-screen layout at 1280 × 720, and mobile feedback automatically revealed inside the quiz without moving the page. Answer navigation and continuation remain functional; JavaScript checks pass and no browser runtime errors were found.
+
+Verified all 33 optional decisions through the browser, wrong-answer retry, saved solved/completed progress after reload, keyboard activation, desktop layout, and 390 × 844 mobile sizing with bounded graph scrolling. Confirmed the existing beginner lab opens normally and no browser runtime errors were reported. `npm test` covers graph ancestry and references, preservation of release/hotfix corrections, fixed release tags, decision completeness, and progress restoration with malformed or unavailable storage.
