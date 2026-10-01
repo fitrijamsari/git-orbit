@@ -337,7 +337,7 @@ const beginnerGuides = [
   ],
   "before": [
    "Try to combine feature with main. Because the same line has two different edits, Git pauses and asks you to choose.",
-   "Use the choices below the graph to decide the sugar amount. The conflict markers show your line and Maya’s line; they are not recipe instructions.",
+   "Use the choices at the bottom of the workspace to decide the sugar amount. The conflict markers show your line and Maya’s line; they are not recipe instructions.",
    "Tell Git you finished fixing pancakes.txt by staging the resolved file. Choosing the text alone does not finish the merge.",
    "Save the resolved result as a merge commit. It keeps the earlier versions and records your final decision."
   ],
@@ -357,7 +357,7 @@ const beginnerGuides = [
    "A normal part of teamwork",
    "Git combines many changes automatically. When edits disagree, people decide the intended result."
   ],
-  "hint": "Choose the sugar amount below the graph. Then stage the recipe and save the merge."
+  "hint": "Choose the sugar amount at the bottom of the workspace. Then stage the recipe and save the merge."
  },
  {
   "title": "Correct a mistake",
@@ -495,7 +495,7 @@ function renderBeginnerGuide(){
  const finished=step>=lessons[lesson].steps.length;
  const alreadyConnected=lesson===2&&step===0&&state.remoteConfigured;
  if(alreadyConnected)document.querySelector('#next-action').innerHTML='Connection ready · continue <span>⌘</span>';
- document.querySelector('#step-explanation').innerHTML=`<span class="section-kicker">${finished?'YOU DID IT':'BEFORE YOU CLICK'}</span><p>${finished?'You finished the practice. Answer the two recap questions below to check your understanding. You can replay them or skip the quiz.':alreadyConnected?'You already connected origin using a quick command. That address is ready. Continue to the upload step; your saved recipe has not been uploaded yet.':guide.before[step]}</p>${finished?'':`<small>${escapeHTML(guide.commandNotes[step])}</small>`}`;
+ document.querySelector('#step-explanation').innerHTML=`<span class="section-kicker">${finished?'YOU DID IT':'BEFORE YOU CLICK'}</span><p>${finished?'You finished the practice. Answer the two recap questions in the Quiz tab to check your understanding. You can replay them or skip the quiz.':alreadyConnected?'You already connected origin using a quick command. That address is ready. Continue to the upload step; your saved recipe has not been uploaded yet.':guide.before[step]}</p>${finished?'':`<small>${escapeHTML(guide.commandNotes[step])}</small>`}`;
  document.querySelector('#lesson-feedback').hidden=step===0;
  document.querySelector('#lesson-feedback').innerHTML=step===0?'':`<span>✓</span><div><strong>What just happened?</strong><p>${guide.after[Math.min(step-1,guide.after.length-1)]}</p></div>`;
 }
