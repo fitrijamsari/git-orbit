@@ -1,6 +1,8 @@
 # Git Orbit
 
-An interactive, browser-only Git and GitHub learning lab. Lesson 1 starts with an empty folder and zero commits: initialize, create a recipe, stage, commit, connect an empty GitHub repository, and push. Later lessons explicitly explain their replayable starting history. Six guided lessons cover the everyday workflow, branching and merging, remotes, team collaboration, conflicts, and undoing shared mistakes. Opens with a beginner introduction and an interactive shared-recipe example. Every lesson includes plain-language explanations before and after actions, a pancake recipe analogy, and clickable vocabulary definitions. The introduction includes a recipe-to-Git summary table for quick recall. Every lesson ends with a two-question recipe-based recap, answer explanations, a score, replay, and an optional skip. Includes animated commit graphs, a simulated terminal, searchable command references, and practice questions.
+An interactive, browser-only Git and GitHub learning lab with two separate learning paths. Start with four solo lessons: initialize an empty folder, edit/stage/commit locally, experiment with branches, use your own GitHub repository, and correct a published mistake. The separate two-lesson team path starts by cloning an existing project, then introduces pull requests, reviews, and conflicts. Navigation, lesson numbering, progress, and continuation stay within the selected path. Solo completion offers an explicit, optional transition into teamwork.
+
+The introduction uses a solo pancake recipe example and a solo-to-Git summary table; team concepts have a separate expandable table. Each lesson explains its replayable starting history, includes plain-language guidance before and after every action, and ends with a two-question recap with feedback, score, replay, and optional skip. Includes animated commit graphs, a simulated terminal, searchable command references, and practice questions.
 
 ## Run locally
 
@@ -20,4 +22,4 @@ Guidance is based on the official Pro Git book (https://git-scm.com/book/en/v2) 
 
 ## Checks performed
 
-All six lessons completed through the UI and structured browser tools. Verified command search, practice feedback, invalid lesson rejection, desktop layout, mobile layout without horizontal overflow, and no browser runtime errors. JavaScript syntax checked using `node --check dist/app.js`.
+All six lessons and their twelve recap questions completed through the UI and structured browser tools. Verified solo ordering (start → branches → own GitHub → recovery), team ordering (clone and review → conflicts), explicit path completion, quiz replay/skip and incorrect-answer feedback, solo/team copy separation, desktop and mobile layouts, and no browser runtime errors. All three JavaScript assets pass `node --check`.
