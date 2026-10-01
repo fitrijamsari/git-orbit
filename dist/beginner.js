@@ -1,4 +1,4 @@
-// Solo lessons use your own recipe; team lessons introduce other people explicitly.
+// File changes stay visible through separate edit, stage, and commit actions.
 const beginnerGuides = [
  {
   "title": "Start from zero",
@@ -70,8 +70,16 @@ const beginnerGuides = [
     "Create a branch"
    ],
    [
-    "Save your new idea",
-    "Edit, stage, and commit"
+    "Edit the recipe",
+    "Add chocolate chips to the working file"
+   ],
+   [
+    "Select the changed recipe",
+    "Stage these exact contents"
+   ],
+   [
+    "Save the chocolate variation",
+    "Commit the staged recipe"
    ],
    [
     "Return to your main recipe",
@@ -84,19 +92,25 @@ const beginnerGuides = [
   ],
   "before": [
    "Create a branch named feature for your chocolate variation. main and feature initially point to the same saved recipe.",
-   "Save the chocolate variation on feature. This button edits the recipe, selects the change, and commits it. main keeps the classic recipe.",
+   "Add 2 tablespoons of chocolate chips to pancakes.txt. Watch that line change in the working file. The saved recipe on the left still has no chocolate chips.",
+   "Select the edited recipe for your next saved version. The Staging area tab shows exactly the contents Git will commit.",
+   "Save the selected recipe with the note “Add chocolate chips”. The saved file will now match the staged contents.",
    "Switch back to main. Your files now show main’s saved version. Your trial work remains safely saved on feature.",
    "Bring the chocolate variation into main. Because main has not changed separately, it can move directly to the saved feature version."
   ],
   "after": [
    "main and feature point to the same version. You are now working on feature; creating a branch did not create a commit.",
-   "The purple circle saves your chocolate experiment. main still points to the classic recipe.",
+   "The working file now contains chocolate chips. The green + shows the new instruction; the red − shows the instruction it replaced. No new commit exists yet.",
+   "The staging area contains the chocolate-chip recipe. The saved version still has no chocolate chips. Staging selects contents; it does not save a commit.",
+   "Your new commit contains chocolate chips. The working file and saved recipe now match. Click its circle to inspect the actual contents saved in that version.",
    "You are back on main. The purple version still exists; switching branches did not delete it.",
    "main now includes the chocolate variation. Git moved main to the saved feature version; this simple merge needed no extra commit."
   ],
   "commandNotes": [
    "git switch chooses a branch. -c creates it first. feature is a name we chose.",
-   "The button runs edit, git add, and git commit on feature.",
+   "This button simulates editing a file in your text editor. “edit pancakes.txt” is a lab action, not a Git command.",
+   "git add pancakes.txt copies its current content into the staging area. If you edit again, that later edit is not selected automatically.",
+   "git commit -m \"Add chocolate chips\" records the staged snapshot in your local history. It does not upload to GitHub.",
    "main is a common name for the main branch; it is a name, not a special Git command.",
    "git merge feature brings feature into the branch you are currently on."
   ],
@@ -142,8 +156,20 @@ const beginnerGuides = [
     "Merge the downloaded version"
    ],
    [
-    "Publish your next improvement",
-    "Edit, stage, commit, and push"
+    "Improve the cooking instructions",
+    "Edit your local recipe"
+   ],
+   [
+    "Select the improved recipe",
+    "Stage the cooking instruction"
+   ],
+   [
+    "Save the improved instructions",
+    "Commit the staged contents"
+   ],
+   [
+    "Upload the saved improvement",
+    "Push your new commit"
    ]
   ],
   "before": [
@@ -152,7 +178,10 @@ const beginnerGuides = [
    "Imagine you open pancakes.txt on GitHub, clarify the mixing instructions, and save with “Commit changes”. You made this edit yourself, in the browser. Your computer still has the earlier version.",
    "Download your online saved history. origin/main is your computer’s bookmark for the latest GitHub main it has seen. Fetch changes that bookmark, but leaves your own main in place.",
    "Bring your downloaded online edit into your computer’s main. This lesson has no competing local edits, so main can simply move forward.",
-   "Improve the instructions on your computer. The button edits, stages, commits, and pushes. Watch your own two copies agree again."
+   "Change “Cook until golden.” to “Cook on medium heat until golden.” on your computer. Watch the working file change while the saved version stays in place.",
+   "Select the edited recipe for your next saved version. Compare the Staging area with your last saved file.",
+   "Commit the selected recipe. This saves the improved cooking instruction on your computer.",
+   "Send your new saved commit to GitHub. Your own local and online recipes will now agree."
   ],
   "after": [
    "origin stores your GitHub address. Your online repository is still empty; you have not uploaded a saved version.",
@@ -160,7 +189,10 @@ const beginnerGuides = [
    "You saved a second version online. GitHub moved forward, while your computer’s main stayed at version 1.",
    "Your computer has downloaded the online history. origin/main moved, but main and your working recipe did not.",
    "Your computer’s recipe now includes your online edit. Downloading and applying an update were two separate actions.",
-   "Your newest saved recipe is on GitHub too. You practiced the whole solo loop: connect → push → online edit → fetch → merge → edit, save, and push."
+   "The cooking line changed in your working file. Your saved version and online copy still have the earlier instruction.",
+   "The new cooking instruction is staged. It is ready to save, but the last commit still contains the older instruction.",
+   "The local saved version now includes the new cooking instruction. Your GitHub copy still has the previous saved version.",
+   "Your two copies now contain the improved cooking instructions. You visibly practiced edit → stage → commit → push as four separate actions."
   ],
   "commandNotes": [
    "git remote add origin <url> stores an address. The example URL is a placeholder; use your own repository URL and authenticate with GitHub in real use.",
@@ -168,7 +200,10 @@ const beginnerGuides = [
    "The GitHub file editor creates a commit online. This button is a simulation; it does not open or modify a real account.",
    "git fetch origin downloads history without applying it to your current branch.",
    "git merge origin/main integrates the history you fetched. git pull --ff-only origin main can do this simple fetch-and-update in one command.",
-   "Push sends saved commits. Editing or staging alone cannot update GitHub."
+   "Editing changes your local file. It creates no saved commit and sends nothing online.",
+   "git add pancakes.txt selects the file’s current contents.",
+   "git commit saves locally. Open the GitHub copy tab to see that the online file has not caught up yet.",
+   "git push origin main sends saved commits. It cannot send unstaged or uncommitted edits."
   ],
   "insight": [
    "GitHub also works for one person",
@@ -198,8 +233,20 @@ const beginnerGuides = [
     "Create feature"
    ],
    [
-    "Save and share the idea",
-    "Commit and push feature"
+    "Edit the recipe",
+    "Add chocolate chips to the working file"
+   ],
+   [
+    "Select the changed recipe",
+    "Stage these exact contents"
+   ],
+   [
+    "Save the chocolate variation",
+    "Commit the staged recipe"
+   ],
+   [
+    "Send feature to GitHub",
+    "Push your saved branch"
    ],
    [
     "Ask to include your changes",
@@ -221,7 +268,10 @@ const beginnerGuides = [
   "before": [
    "The recipe already exists on GitHub because Maya started it. Clone downloads its files and history into a new folder on your computer. You do not run init on this existing project.",
    "Start a feature branch so your idea can develop separately from the team’s main version.",
-   "Save the idea on feature and send that branch to GitHub. Publishing a feature does not put it into main.",
+   "Add 2 tablespoons of chocolate chips to pancakes.txt. Watch that line change in the working file. The saved recipe on the left still has no chocolate chips.",
+   "Select the edited recipe for your next saved version. The Staging area tab shows exactly the contents Git will commit.",
+   "Save the selected recipe with the note “Add chocolate chips”. The saved file will now match the staged contents.",
+   "Publish your saved chocolate variation on GitHub’s feature branch. This makes it available for review, but does not add chocolate chips to the team’s main recipe.",
    "Open a pull request on GitHub. This proposes adding the work from feature to main; it does not merge it yet.",
    "Maya reads and approves the chocolate-chip addition. Meanwhile, Leo sends clearer mixing instructions to the shared main branch.",
    "Accept the pull request. The new merge commit joins your feature and Leo’s main update in the shared history.",
@@ -230,7 +280,10 @@ const beginnerGuides = [
   "after": [
    "Your computer now has the team’s recipe and its first saved version. origin was configured automatically. Cloning copied the history; it did not create a new commit.",
    "Your feature branch is ready. Each teammate can work on their own branch without moving main.",
-   "Your idea is on GitHub’s feature branch. The team’s main version has not adopted it yet.",
+   "The working file now contains chocolate chips. The green + shows the new instruction; the red − shows the instruction it replaced. No new commit exists yet.",
+   "The staging area contains the chocolate-chip recipe. The saved version still has no chocolate chips. Staging selects contents; it does not save a commit.",
+   "Your new commit contains chocolate chips. The working file and saved recipe now match. Click its circle to inspect the actual contents saved in that version.",
+   "Your feature branch is published. The team’s main recipe still has no chocolate chips; a pull request will propose accepting the variation.",
    "The pull request is open. Maya can compare your changes with main and leave feedback.",
    "Maya approved the idea, and Leo added his own update. Approval is feedback; it does not merge the code.",
    "GitHub has a merged version with both histories. Your local main is still behind it.",
@@ -239,7 +292,10 @@ const beginnerGuides = [
   "commandNotes": [
    "git clone <url> creates a local copy of an existing repository. This lab simulates the download.",
    "git switch -c feature creates and selects your trial branch.",
-   "The button edits, stages, commits, then runs git push -u origin feature. -u remembers the branch to sync with.",
+   "This button simulates editing a file in your text editor. “edit pancakes.txt” is a lab action, not a Git command.",
+   "git add pancakes.txt copies its current content into the staging area. If you edit again, that later edit is not selected automatically.",
+   "git commit -m \"Add chocolate chips\" records the staged snapshot in your local history. It does not upload to GitHub.",
+   "git push -u origin feature uploads feature and remembers its upstream branch. The GitHub copy tab in this lab shows the team’s main recipe.",
    "A pull request is a GitHub feature. It is different from the git pull command.",
    "This button simulates Maya’s review and Leo’s independent contribution.",
    "This button simulates GitHub’s “Create a merge commit” option.",
