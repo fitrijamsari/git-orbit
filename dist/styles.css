@@ -41,3 +41,37 @@
 @media(max-width:650px){.graph-flow-header{margin:12px 16px 0;font-size:10px;letter-spacing:.5px}.graph .team-labels{margin:10px 16px 0}.graph-explanation{margin:0 14px 16px;font-size:14px}}
 
 .graph-scroll-hint{display:none}@media(max-width:650px){.graph-scroll-hint{display:block;margin:0 16px 12px;color:#819aab;font-size:12px}}
+
+/* Keep the command and its result beside the lesson, before the file and graph. */
+.lab-grid{align-items:start}
+.lab-grid>.terminal-panel{grid-column:1;grid-row:1;position:sticky;top:12px;z-index:3;margin:0;box-shadow:0 12px 30px #0004}
+.lab-grid>.visual-panel{grid-column:1;grid-row:2}
+.lab-grid>.guide-panel{grid-column:2;grid-row:1 / span 2}
+.terminal-panel .panel-head{height:44px;min-height:44px;padding:0 18px}
+.terminal-panel .terminal-help{padding:9px 18px 0;font-size:13px;line-height:1.5}
+.terminal-step{padding:10px 18px 0}
+.terminal-step-label{font:10px var(--mono);letter-spacing:.8px;color:#7f9cae;margin-bottom:6px}
+.terminal-step-action{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 11px;border:1px solid #3b7964;border-radius:5px;background:#123028;text-align:left;color:var(--mint)}
+.terminal-step-action code{font:12px/1.6 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;min-width:0}
+.terminal-step-action>span{font-size:13px}
+.terminal-step-action b{font-size:12px;flex-shrink:0;font-weight:600}
+.terminal-step-note{font-size:12px;color:#96aebf;line-height:1.55;margin:6px 0 0}
+.terminal-panel #terminal-output{min-height:48px;max-height:84px;padding:8px 18px 0;font-size:12px;line-height:1.7}
+.terminal-panel #terminal-form{padding:5px 18px 10px;gap:8px;font-size:11px}
+.terminal-panel .prompt{font-size:11px}
+.terminal-panel #command-input{font-size:12px;padding:5px 0}
+.terminal-panel #terminal-form button{font-size:12px;padding:4px 8px;color:var(--mint)}
+.terminal-tools{display:flex;gap:10px;align-items:center;padding:8px 18px;border-top:1px solid var(--line);flex-wrap:wrap}
+.terminal-tools>button{font:11px var(--mono);color:#9eb3c4;border:1px solid #293d4c;border-radius:4px;padding:4px 7px;background:#14212b}
+.terminal-more{flex:1;min-width:150px}
+.terminal-more summary{cursor:pointer;font-size:12px;color:#91acbd}
+.terminal-more[open]{flex-basis:100%}
+.terminal-more .command-chips{border:0;padding:10px 0 2px;max-height:120px;overflow:auto}
+.terminal-more .command-chips:before{display:none}
+.terminal-more .command-chips button{font-size:11px}
+.terminal-resolutions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.terminal-resolutions button{font-size:12px;padding:6px 8px;border:1px solid #3b7964;border-radius:4px;background:#123028;color:var(--mint)}
+.file-workbench.file-edited{animation:file-edit-flash .7s ease-out}
+@keyframes file-edit-flash{from{border-color:var(--mint)}to{border-color:#2b3e49}}
+@media(max-width:1050px){.lab-grid>.terminal-panel{grid-column:1;grid-row:1}.lab-grid>.guide-panel{grid-column:1;grid-row:2}.lab-grid>.visual-panel{grid-column:1;grid-row:3}}
+@media(max-width:650px){.lab-grid>.terminal-panel{top:6px}.terminal-panel .terminal-help{font-size:12px;padding:8px 14px 0}.terminal-step{padding:9px 14px 0}.terminal-panel #terminal-output{padding-left:14px;padding-right:14px;max-height:68px;font-size:11px}.terminal-panel #terminal-form{padding-left:14px;padding-right:14px}.terminal-panel .prompt{display:none}.terminal-tools{padding:7px 14px}.terminal-step-action code{font-size:11px}.terminal-step-note{font-size:11px}.terminal-more .command-chips{max-height:90px}}
