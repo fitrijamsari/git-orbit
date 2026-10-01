@@ -1,6 +1,6 @@
 # Git Orbit
 
-An interactive, browser-only Git and GitHub learning lab. Six guided lessons cover the everyday workflow, branching and merging, remotes, team collaboration, conflicts, and undoing shared mistakes. Opens with a beginner introduction and an interactive shared-notebook example. Every lesson includes plain-language explanations before and after actions, a notebook analogy, and clickable vocabulary definitions. Includes animated commit graphs, a simulated terminal, searchable command references, and practice questions.
+An interactive, browser-only Git and GitHub learning lab. Six guided lessons cover the everyday workflow, branching and merging, remotes, team collaboration, conflicts, and undoing shared mistakes. Opens with a beginner introduction and an interactive shared-recipe example. Every lesson includes plain-language explanations before and after actions, a pancake recipe analogy, and clickable vocabulary definitions. The introduction includes a recipe-to-Git summary table for quick recall. Includes animated commit graphs, a simulated terminal, searchable command references, and practice questions.
 
 ## Run locally
 
