@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://git-orbit-lab.pages.dev/</loc></url>
+  <url><loc>https://git-orbit-lab.pages.dev/lessons/start-a-repository/</loc></url>
+  <url><loc>https://git-orbit-lab.pages.dev/lessons/branches-and-merging/</loc></url>
+  <url><loc>https://git-orbit-lab.pages.dev/lessons/github-and-remotes/</loc></url>
+  <url><loc>https://git-orbit-lab.pages.dev/lessons/pull-requests/</loc></url>
+  <url><loc>https://git-orbit-lab.pages.dev/lessons/merge-conflicts/</loc></url>
+  <url><loc>https://git-orbit-lab.pages.dev/lessons/undo-and-recovery/</loc></url>
+  <url><loc>https://git-orbit-lab.pages.dev/reference/</loc></url>
+  <url><loc>https://git-orbit-lab.pages.dev/challenges/</loc></url>
+  <url><loc>https://git-orbit-lab.pages.dev/habits-and-workflows/</loc></url>
+</urlset>

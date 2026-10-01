@@ -20,9 +20,19 @@ Gitflow is presented as an optional model for planned, versioned releases, with 
 
 ## Branding
 
-The selected orbital commits logo is shared by the sidebar, footer, lesson overview, and About dialog. Deployable assets live in `dist/assets/brand`, with a multi-size `dist/favicon.ico`, PNG favicons, an Apple touch icon, home-screen icons referenced by `dist/site.webmanifest`, and the selected concept as the social preview. Transparent source artwork and generation prompts are retained in `output/logo-concepts`.
+The selected orbital commits logo is shared by the sidebar, footer, lesson overview, and About dialog. Deployable assets live in `dist/assets/brand`, with a multi-size `dist/favicon.ico`, PNG favicons, an Apple touch icon, home-screen icons referenced by `dist/site.webmanifest`, and a landscape social preview (`social-preview-wide.png`, 1732 × 908) with the full logo and wordmark inside safe margins. The original square preview remains available. Transparent source artwork and generation prompts are retained in `output/logo-concepts`.
 
 Verified the logo on desktop and 390 × 844 mobile layouts, including lesson practice, with no page-width overflow or browser errors. All linked local assets, favicon sizes, image transparency, and manifest icon dimensions were checked. JavaScript checks and the existing six tests pass.
+
+## SEO and accessibility
+
+The home page, six lesson overviews, command reference, challenges, and habits/workflows overview have separate crawlable URLs. Each page includes readable content before JavaScript runs, a unique title and description, canonical URL, social metadata, and WebSite/WebPage or LearningResource structured data. `dist/robots.txt` advertises the generated sitemap. A dedicated 404 page prevents unknown URLs from falling back to the learning app.
+
+`src/index.html` is the shared page template. `dist/routes.js` defines public URLs and metadata. `scripts/build.cjs` generates ten HTML pages and the sitemap using the same lesson and view data as the simulator. Run `npm run build` after editing the template, routes, or content; keep generated files with the change. The existing Cloudflare build command can remain blank because generated output is committed. Manual development/deployment scripts regenerate pages automatically.
+
+Navigation uses native links, supports opening lessons in another tab, and updates metadata and browser history. Keyboard users have a skip link, labeled dialogs and tab panels, and arrow-key controls for workspace, guide, and file-copy tabs. Learning-path buttons expose their pressed state. The lab shortcut is Alt+L to avoid interfering with ordinary typing. Motion preferences persist locally. Mobile navigation scrolls horizontally with larger targets. Fonts use preconnects and a stylesheet link instead of a CSS import; application scripts are deferred. Static asset headers add revalidation and basic browser protections.
+
+Validation includes JavaScript syntax checks and eight tests covering existing workflow logic, public routes, generated content, canonical/schema/sitemap consistency, and local links. Browser checks cover direct URLs, browser history, lessons, search, dialogs, motion persistence, and desktop/mobile layouts. Search rankings and Core Web Vitals have not been measured on a deployed version of these changes. The SEO approach follows [Google’s JavaScript SEO guidance](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics); tab interaction follows the [W3C tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/).
 
 ## Run locally
 
@@ -32,7 +42,7 @@ From this directory:
 python3 -m http.server 4173 --bind 127.0.0.1 --directory dist
 ```
 
-Open http://127.0.0.1:4173. No build step or application dependencies are required. Google Fonts is optional; system fonts are used when unavailable.
+Open http://127.0.0.1:4173. Run `npm run build` after changing content or the page template. Generated pages are committed in `dist`, so the preview needs no application dependencies. Google Fonts is optional; system fonts are used when unavailable.
 
 ## Cloudflare Pages
 
