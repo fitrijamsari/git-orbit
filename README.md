@@ -35,6 +35,7 @@ The first production deployment is live and all five assets match `dist`. Automa
 Manage deployments and custom domains from the project's Pages dashboard. In this checkout, `github` is the GitHub remote and `origin` retains the previous Sites source location:
 
 ```sh
+npm run check
 git push github main
 ```
 
