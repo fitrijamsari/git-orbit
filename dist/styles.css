@@ -266,3 +266,80 @@
 @media(min-width:651px) and (max-height:780px){.lab-active .topbar{display:none}#workspace-graph{height:205px}}
 
 #workspace-graph .commit-node text:nth-of-type(2){display:none}
+
+/* Give the timeline the space left after a compact editor/terminal. */
+.lab-console .workspace-pane-host{flex:0 1 280px;min-height:160px}
+.lab-console #workspace-graph{flex:1;min-height:200px;height:auto}
+#workspace-graph .graph-scroll svg{width:100%;height:100%;max-height:320px;min-height:0}
+.lab-grid[data-pane=quiz] .workspace-pane-host{flex:1;min-height:0}
+.lab-grid[data-pane=quiz] #workspace-graph{flex:0 0 190px;min-height:0}
+.workspace-view-tabs .lesson-overview-button{font-size:11px;color:#9fbcb4}
+#workspace-file .recipe-code-panes{align-content:start}
+/* A short, readable briefing before each practice. */
+.lesson-preview-active .intro,.lesson-preview-active footer{display:none}
+.lesson-preview-active .topbar{height:48px}
+.lesson-preview-active main{padding-top:24px;padding-bottom:24px}
+.lesson-preview{max-width:1100px;margin:auto}
+.lesson-preview-heading h2{font:600 clamp(30px,3vw,45px)/1.15 'Space Grotesk',sans-serif;letter-spacing:-1px;margin:10px 0 12px}
+.lesson-preview-heading>p{color:#a7bac8;max-width:800px;font-size:15px;line-height:1.65;margin:0 0 24px}
+.lesson-preview-grid{display:grid;grid-template-columns:1.2fr 1fr;border:1px solid #2a403d;background:linear-gradient(125deg,#10231d,#0d1820 70%);border-radius:14px;overflow:hidden}
+.preview-goals{padding:25px 28px}
+.preview-goals ol{list-style:none;padding:0;margin:16px 0 18px;display:grid;gap:15px}
+.preview-goals li{display:flex;gap:15px;align-items:center}
+.preview-goals li>span{height:32px;width:32px;flex:none;display:grid;place-items:center;border:1px solid #376657;border-radius:8px;color:var(--mint);font:11px var(--mono);background:#63e9c308}
+.preview-goals li>p{margin:0;font-size:15px;line-height:1.5;color:#d0e1df}
+.preview-outcome{margin:0;padding-top:15px;border-top:1px solid #2c443c;color:#99b4ad;font-size:13px;line-height:1.6}
+.preview-setup{padding:25px 28px;border-left:1px solid #2a403d;position:relative;overflow:hidden}
+.preview-setup>.section-kicker{position:relative;z-index:1}
+.preview-save-count{display:flex;align-items:center;gap:12px;margin:12px 0 10px;position:relative}
+.preview-save-count strong{font:500 43px/1 'Space Grotesk',sans-serif;color:var(--mint)}
+.preview-save-count>span{font:11px var(--mono);color:#9fbbc9;max-width:130px}
+.preview-location{color:#bba2fa;font:11px var(--mono)}
+.preview-setup p{color:#b3c6d3;font-size:13px;line-height:1.65;position:relative;max-width:350px;margin:14px 0 10px}
+.preview-setup small{font-size:11px;line-height:1.5;color:#748f9e;display:block;position:relative;max-width:310px}
+.preview-radar{position:absolute;top:-20px;right:-30px;width:170px;height:170px;opacity:.25;display:grid;place-items:center}
+.preview-radar i{position:absolute;border:1px solid #63e9c3;border-radius:50%;width:100%;height:100%;animation:preview-orbit 16s linear infinite}
+.preview-radar i:nth-child(2){width:70%;height:70%;border-style:dashed;animation-direction:reverse}
+.preview-radar i:nth-child(3){width:40%;height:40%}
+.preview-radar>span{font-size:26px;color:var(--mint)}
+@keyframes preview-orbit{to{transform:rotate(360deg)}}
+.preview-terms{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:17px 0}
+.preview-terms>span{color:#7f99a9;font-size:12px;margin-right:5px}
+.preview-terms button{border:1px solid #2a404c;border-radius:6px;background:#0f1c25;padding:6px 10px;color:#bdcfdc;font-size:11px}
+.preview-terms button span{color:var(--mint);margin-left:8px}
+.preview-start{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:18px;border-top:1px solid var(--line)}
+.preview-start strong{font:11px var(--mono);color:#a0c3bd}
+.preview-start p{font-size:12px;line-height:1.5;color:#839dad;margin:6px 0 0}
+.preview-start .primary-button{width:auto;min-width:170px;padding:12px 18px;justify-content:space-between}
+@media(max-width:900px){.lab-console .workspace-pane-host{flex:0 1 290px;min-height:130px}.lab-console #workspace-graph{min-height:180px}.lab-grid[data-pane=guide] .workspace-pane-host{flex:1}.lab-grid[data-pane=guide] #workspace-graph{flex:0 0 210px}.lesson-preview-grid{grid-template-columns:1fr}.preview-setup{border-left:0;border-top:1px solid #2a403d}.preview-goals,.preview-setup{padding:20px}.preview-goals ol{gap:11px}.preview-setup p{max-width:none}.preview-save-count strong{font-size:32px}.lesson-preview-active main{padding:20px}}
+@media(max-width:650px){.lab-console .workspace-pane-host{flex:1;min-height:100px}.lab-console #workspace-graph{flex:0 0 220px;min-height:0}.lab-grid[data-pane=quiz] #workspace-graph{flex-basis:170px}.lesson-preview-heading h2{font-size:29px}.lesson-preview-heading>p{font-size:13px;margin-bottom:16px}.preview-goals li>p{font-size:13px}.preview-outcome{font-size:12px}.preview-setup p{font-size:12px}.preview-setup small{font-size:10px}.preview-goals,.preview-setup{padding:16px}.preview-start{align-items:stretch;flex-direction:column;gap:12px}.preview-start .primary-button{width:100%}.preview-terms{gap:6px}.lesson-preview-active .topbar{display:none}.workspace-view-tabs .graph-head-actions .lesson-overview-button{font-size:10px;padding:4px}.preview-radar{width:140px;height:140px}}
+@media(max-height:740px) and (max-width:650px){.lab-console #workspace-graph{flex-basis:185px}}
+@media(prefers-reduced-motion:reduce){.preview-radar i{animation:none}}.motion-paused .preview-radar i{animation:none}
+
+@media(max-width:650px){
+.lesson-preview-active{overflow:hidden}
+.lesson-preview-active .app-shell{height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+.lesson-preview-active .sidebar{padding:8px 12px;flex:none}
+.lesson-preview-active .sidebar .brand{font-size:22px;margin-bottom:4px}
+.lesson-preview-active .brand-icon{width:28px;height:28px;font-size:21px}
+.lesson-preview-active .brand small,.lesson-preview-active .nav-label,.lesson-preview-active .sidebar-line,.lesson-preview-active .lesson-nav,.lesson-preview-active .sidebar-bottom{display:none}
+.lesson-preview-active .main-nav{margin-top:7px;gap:3px;flex-wrap:nowrap}
+.lesson-preview-active .main-nav button{font-size:10px;padding:6px 4px;flex:1 1 auto}
+.lesson-preview-active .page{height:auto;flex:1;min-height:0;margin:0;display:flex;flex-direction:column}
+.lesson-preview-active main{flex:1;min-height:0;padding:12px;display:flex;overflow:hidden}
+.lesson-preview{min-height:0;display:flex;flex-direction:column;flex:1;margin:0}
+.lesson-preview-heading{flex:none}
+.lesson-preview-heading h2{font-size:26px;margin:7px 0 9px}
+.lesson-preview-heading>p{font-size:12px;line-height:1.5;margin-bottom:12px}
+.lesson-preview-grid{flex:1;min-height:0;overflow:auto;align-content:start;scrollbar-width:thin;scrollbar-color:#345163 transparent}
+.preview-goals,.preview-setup{padding:14px}
+.preview-goals li>p{font-size:12px}
+.preview-goals ol{margin:12px 0;gap:9px}
+.preview-terms{flex:none;margin:9px 0;gap:5px}
+.preview-terms button{padding:4px 7px;font-size:10px}
+.preview-start{flex:none;padding-top:9px;gap:9px}
+.preview-start p{font-size:10px;margin-top:4px}
+.preview-start .primary-button{padding:10px 14px;font-size:12px}
+}
+
+@media(max-width:650px){.lesson-preview-grid{grid-auto-rows:max-content}}
